@@ -42,8 +42,11 @@ int main()
   //pid.Init(0.3, 0.004, 3.000);
   // Forth Trial. Osciliate a lot after some time, Tune down the I paramter first 
   //pid.Init(0.3, 0.004, 2.500);
-  // Fifth Trial
+  // Fifth Trial. Can bascially finish the track. But too slow to adopt the curve obviously
   pid.Init(0.3, 0.001, 2.500);
+  // Sixth Trial
+  pid.Init(0.33, 0.0011, 2.500);
+
 
   h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
     // "42" at the start of the message means there's a websocket message event.
