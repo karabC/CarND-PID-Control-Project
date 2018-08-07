@@ -39,13 +39,16 @@ int main()
   // Second Trial. Even fast to out of track. Response too slow
   // pid.Init(0.1, 0.004, 3.000);
   // Third Trial. It maintains on Road for a while. Also seems a bit off the road, reduce D for over react
-  //pid.Init(0.3, 0.004, 3.000);
+  // pid.Init(0.3, 0.004, 3.000);
   // Forth Trial. Osciliate a lot after some time, Tune down the I paramter first 
-  //pid.Init(0.3, 0.004, 2.500);
-  // Fifth Trial. Can bascially finish the track. But too slow to adopt the curve obviously
-  pid.Init(0.3, 0.001, 2.500);
-  // Sixth Trial
-  pid.Init(0.33, 0.0011, 2.500);
+  // pid.Init(0.3, 0.004, 2.500);
+  // Fifth Trial. Can bascially finish the track. But too slow to adopt the curve obviously. Raiot of P and I should be fine. 
+  // Try add 10% to P and I.
+  // pid.Init(0.3, 0.001, 2.500);
+  // Sixth Trial. Get better in turning curve but oscilliate too obviously. Add D to reduce oscilliation
+  // pid.Init(0.33, 0.0011, 2.500);
+  // Seventh Trial
+  pid.Init(0.33, 0.0011, 2.750);
 
 
   h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
