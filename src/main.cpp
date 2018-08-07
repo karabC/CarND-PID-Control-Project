@@ -33,12 +33,15 @@ int main()
   uWS::Hub h;
 
   PID pid;
+  // Decide to tune manually first, as three parameter should be easy to find a feasible solution
   // First Trial. Oscillate too much
   // pid.Init(0.2, 0.004, 3.000);
   // Second Trial. Even fast to out of track. Response too slow
   // pid.Init(0.1, 0.004, 3.000);
-  // Third Trial
-  pid.Init(0.3, 0.004, 3.000);
+  // Third Trial. It maintains on Road for a while. Also seems a bit off the road, reduce D for over react
+  //pid.Init(0.3, 0.004, 3.000);
+  // Forth Trial 
+  pid.Init(0.3, 0.004, 2.500);
 
   h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
     // "42" at the start of the message means there's a websocket message event.
