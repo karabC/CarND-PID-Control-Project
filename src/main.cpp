@@ -47,9 +47,13 @@ int main()
   // pid.Init(0.3, 0.001, 2.500);
   // Sixth Trial. Get better in turning curve but oscilliate too obviously. Add D to reduce oscilliation
   // pid.Init(0.33, 0.0011, 2.500);
-  // Seventh Trial
+  // Seventh Trial. Seems the 2.7 and 2.675 of D resulting very similar
   pid.Init(0.33, 0.0011, 2.750);
-  pid.Init(0.33, 0.0011, 2.675);
+  // Eighteh Seems the 2.7 and 2.675 of D resulting very similar
+  pid.Init(0.33, 0.0011, 2.675);  
+
+  // Ninthe Trial. 
+  pid.Init(0.335, 0.00112, 2.675);
 
 
 
