@@ -49,6 +49,8 @@ int main()
   // pid.Init(0.33, 0.0011, 2.500);
   // Seventh Trial
   pid.Init(0.33, 0.0011, 2.750);
+  pid.Init(0.33, 0.0011, 2.675);
+
 
 
   h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
